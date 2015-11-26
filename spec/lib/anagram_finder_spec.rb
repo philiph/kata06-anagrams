@@ -20,6 +20,14 @@ describe AnagramFinder do
       end
     end
 
+    context 'no words added' do
+
+      it 'returns an empty array' do
+        expect(anagram_finder.anagrams).to eq([])
+      end
+
+    end
+
   end
 
 end
