@@ -12,7 +12,8 @@ filename = ARGV[0]
 anagram_finder = AnagramFinder.new
 
 File.foreach(filename) do |line|
-  anagram_finder.add_word line.strip
+  utf8_line = line.encode('UTF-8', 'binary', invalid: :replace, undef: :replace, replace: '')
+  anagram_finder.add_word utf8_line.strip
 end
 
 anagrams = anagram_finder.anagrams
